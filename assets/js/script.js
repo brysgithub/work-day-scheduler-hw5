@@ -11,7 +11,6 @@ function colorInput() {
     for (let i = 9; i < 18; i++) {
         
         var textInputEl = $('[data-id="' + i + '"]');  
-        // TODO: add if else statements to make the timeblocks the correct color
 
         if (i == currentTime24Hours) {
             textInputEl.addClass('present');
@@ -24,11 +23,28 @@ function colorInput() {
             console.log("past");
         };
     };
-};
+}
 
 colorInput();
 
-//TODO: save user input to local storage to recall on page reload
-function saveInput () {
-    //save things heererereerer
-};
+// var saveBtnEl = document.querySelector(".saveBtn");
+
+// function storeText(textInput) {
+//     localStorage.setItem("textInput", JSON.stringify(textInput));
+// };
+
+// saveBtnEl.addEventListener("click", function(event) {
+//     event.preventDefault();
+    
+//     var parentElement = event.siblings(1)
+//     var textInput = parentElement.childNodes[1];
+//     console.log(textInput);
+//     console.log(parentElement);
+
+//     storeText(textInput.value);
+// });
+
+// Possible solution(Jquery event listener > create function > button event listener > from the button element traverse to textInput > call storeText)
+$('button').on('click', function() {
+    $(this).find('input').storeText();
+});
