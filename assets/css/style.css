@@ -94,3 +94,7 @@ textarea {
 .timeNum {
   padding-right: 10px;
 }
+
+.textBorder {
+  border-top: #000000 1px;
+}

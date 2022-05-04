@@ -27,31 +27,13 @@ function colorInput() {
 
 colorInput();
 
-// var saveBtnEl = document.querySelector(".saveBtn");
-
-// function storeText(textInput) {
-//     localStorage.setItem("textInput", JSON.stringify(textInput));
-// };
-
-// saveBtnEl.addEventListener("click", function(event) {
-//     event.preventDefault();
-    
-//     var parentElement = event.siblings(1)
-//     var textInput = parentElement.childNodes[1];
-//     console.log(textInput);
-//     console.log(parentElement);
-
-//     storeText(textInput.value);
-// });
-
-// Possible solution(Jquery event listener > create function > button event listener > from the button element traverse to textInput > call storeText)
+// Save button saves text inside of the textarea element to localStorage (saves inconsistently. lil broken. seems dependent on what was last clicked on page)
 $('.saveBtn').on('click', (event) => {
     event.preventDefault();
-    var posId = $(event.target).parent().attr('data-id')
-    var text = $(event.target).siblings('.textInput').val()
+    var posId = $(event.target).siblings('textarea').data('id');
+    var text = $(event.target).siblings('textarea').val();
 
-    localStorage.setItem(posId, text)
-    // $(this).find('input').storeText();
+    localStorage.setItem(posId, text);
 });
 
-$('#9 textInput').val(localStorage.getItem('9'));
+$('9 text').val(localStorage.getItem('9'));
