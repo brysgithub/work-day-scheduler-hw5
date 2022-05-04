@@ -25,7 +25,18 @@ function colorInput() {
     }
 };
 
+function displaySave() {
+    
+    for (let i = 9; i < 18; i++) {
+        
+        var textAreaEl = $('[data-id="' + i + '"]');
+        textAreaEl.val(localStorage.getItem(i));
+        
+    }
+};
+
 colorInput();
+displaySave();
 
 // Save button saves text inside of the textarea element to localStorage (saves inconsistently. lil broken. seems dependent on what was last clicked on page)
 $('.saveBtn').on('click', (event) => {
