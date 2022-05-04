@@ -32,13 +32,12 @@ textarea {
 .timeBlock {
   display: flex;
   flex-direction: row;
-  text-align: center;
+  text-align: end;
   border-radius: 15px;
 }
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
   border-top: 1px solid white;
 }
 
@@ -47,16 +46,21 @@ textarea {
   color: #000000;
   border-top: 1px dashed #000000;
   align-items: center;
-  padding: 20px;
+  width: 5rem;
+}
+
+.textInput:focus {
+  flex-grow: 2;
+  color: black;
 }
 
 .textInput {
   flex-grow: 2;
+  color: black;
 }
 
 .past {
   background-color: #d3d3d3;
-  color: white;
 }
 
 .present {
@@ -66,7 +70,6 @@ textarea {
 
 .future {
   background-color: #77dd77;
-  color: white;
 }
 
 .saveBtn {
@@ -86,4 +89,8 @@ textarea {
 .saveImg {
   height: 25px;
   width: 25px;
+}
+
+.timeNum {
+  padding-right: 10px;
 }

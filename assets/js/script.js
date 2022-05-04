@@ -21,9 +21,9 @@ function colorInput() {
         } else {
             textInputEl.addClass('past');
             console.log("past");
-        };
-    };
-}
+        }
+    }
+};
 
 colorInput();
 
@@ -45,6 +45,13 @@ colorInput();
 // });
 
 // Possible solution(Jquery event listener > create function > button event listener > from the button element traverse to textInput > call storeText)
-$('button').on('click', function() {
-    $(this).find('input').storeText();
+$('.saveBtn').on('click', (event) => {
+    event.preventDefault();
+    var posId = $(event.target).parent().attr('data-id')
+    var text = $(event.target).siblings('.textInput').val()
+
+    localStorage.setItem(posId, text)
+    // $(this).find('input').storeText();
 });
+
+$('#9 textInput').val(localStorage.getItem('9'));
